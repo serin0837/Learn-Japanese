@@ -1,12 +1,9 @@
-.card-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+body {
+  background-color: #ffdada;
+  text-align: center;
 }
 
-.card {
-  background-color: bisque;
+.form-head {
+  width: 500px;
+  display: inline-block;
 }
-
-/* 
-flex box make // bootstrap//css together work out */
