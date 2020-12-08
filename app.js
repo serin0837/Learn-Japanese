@@ -11,6 +11,8 @@ const html1 = '<div class="card border-success m-3" style="width: 18rem;"><div c
 const html2 = '</h2><p class="card-text">'
 const html3 = '</p><button type="button" class="btn btn-outline-info">update</button><button type="button" class="btn btn-outline-danger" id="%id%">delete</button></div>'
 
+
+
 document.querySelector("#add-button").addEventListener("click", addWord);
 function addWord (event){
     event.preventDefault();
@@ -19,8 +21,19 @@ function addWord (event){
     html1.replace('%id%', newWords.id);
     newWords.id = Date.now()
     resArr.push(newWords);
-
     console.log("function is working" + newWords.id);
+    localStorage.setItem("word", newWords.wordH2Input.value);
+    const word = localStorage.getItem('word');
+    console.log(word)
+}
+
+
+document.getElementsByClassName("delete")[0].addEventListener("click",function(){
+    console.log("click")
+})
+
+function myDeleteFunction(event) { 
+    alert(event.target.parentElement).remove();
 }
 
 //We would need to figure out how to push the date ID to the created object and inject it to the below code 
