@@ -1,47 +1,39 @@
-const newWords =
-    {
-        id : 0,
-        wordH2Input : document.getElementById("japanese"),
-        wordMeaningInput :document.getElementById("english")
-    };
-const resArr = [];
-// var newHtml = `<div class="card border-success m-3"  style="width: 18rem;"><div class="card-body"><h2 class="card-title">`+ wordH2Input.value+'</h2><p class="card-text">'+wordMeaningInput.value+'</p><button type="button" class="btn btn-outline-info">update</button><button type="button" class="btn btn-outline-danger">delete</button></div>'
+const newWords ={
+    wordH2Input : document.getElementById("japanese"),
+    wordMeaningInput :document.getElementById("english")
+};
 
-const html1 = '<div class="card border-success m-3" style="width: 18rem;"><div class="card-body"><h2 class="card-title">'
+const html1 = '<li class="card border-success m-3" style="width: 18rem;"><div class="card-body"><h2 class="card-title">'
 const html2 = '</h2><p class="card-text">'
-const html3 = '</p></div><button type="button" class="btn btn-outline-info">update</button><button type="button" class="btn btn-outline-danger delete">delete</button></div>'
-
-
+const html3 = '</p></div><button type="button" class="btn btn-outline-info update">update</button><button type="button" class="btn btn-outline-danger delete">delete</button></li>'
+const validate = document.querySelector('input');
 
 document.querySelector("#add-button").addEventListener("click", addWord);
 function addWord (event){
+if(validate.value === ""){
+    alert("Please insert your word of the day");
+} else {
     event.preventDefault();
-    var d1 = document.getElementById('card');
+    const d1 = document.getElementById('card');
     d1.insertAdjacentHTML('beforeend', html1+newWords.wordH2Input.value+html2+newWords.wordMeaningInput.value+html3);
-    html1.replace('%id%', newWords.id);
-    newWords.id = Date.now()
-    resArr.push(newWords);
     localStorage.setItem("word", newWords.wordH2Input.value);
-    const word = localStorage.getItem('word');
-    console.log(word)
 }
+};
+
+document.getElementById('card').addEventListener('click', function(e) {
+const tgt = e.target;
+const parent = tgt.closest('li');
+if (tgt.classList.contains('delete')) parent.remove();
+else if (tgt.classList.contains('update')) {
+console.log("Update clicked for ", parent.querySelector(".card-title").textContent)
+document.createElement("input");
+}
+});
 
 
-document.querySelector('li').addEventListener('click', deleteOrTick);
-// deleteTick
-function deleteOrTick(e){
-    console.log("check click")
-    if(e.target.className == 'delete'){
-        console.log("delete clicked")
-    }
-      deleteTask(e);
-        // delete task
-    function deleteTask(e){
-        let remove = e.target.parentNode;
-        let parentNode = remove.parentNode;
-        parentNode.removeChild(remove);
-    }
-  }
-  
+//<input type="text" placeholder="Jap"><h2 class="card-title">にほんご</h2></input>
 
-
+// editInput.type="text";
+// var editTask=function(){
+//     console.log("Edit Task...");
+//     console.log("Change 'edit' to 'save'");
