@@ -7,3 +7,7 @@ body {
   width: 500px;
   display: inline-block;
 }
+
+.update-input-box {
+  width: 200px;
+}
