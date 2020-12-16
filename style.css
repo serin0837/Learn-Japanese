@@ -11,3 +11,17 @@ body {
 .update-input-box {
   width: 200px;
 }
+
+.card-title {
+  width: 200px;
+  text-align: center;
+  font-size: 30px;
+  border:none;
+  background-color: white;
+
+}
+.card-text {
+  text-align: center;
+  border: none;
+  background-color: white;
+}
