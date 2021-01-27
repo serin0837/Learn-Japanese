@@ -1,10 +1,9 @@
-# Learn Japanese
+## Description
 
-- This website created to memorize Japanese word and we created this website for our passion to learn Japanese.
-- Use pure Javascript.
+- Web application created to memorize Japanese words. We created this website for our passion to learn Japanese also to practice pure JavaScriptUse.
 - Feel free to add a word that you want to memorize.
-- Once you've memorized it, click 'delete' button to delete the word.
-- Any typo? don't worry. just click 'edit' button to amend any mistakes.
+- Once you've memorized it, click the 'delete' button to delete the word.
+- Any typo? don't worry. just click the 'edit' button to amend any mistakes..
 
 # Live website👇
 
